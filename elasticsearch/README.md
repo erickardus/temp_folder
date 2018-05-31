@@ -1,8 +1,5 @@
-
-
-
-# How to create a cluster in your workstation
-
+How to create a cluster in your workstation
+==============
 
 1. Create a network for your containers
 
