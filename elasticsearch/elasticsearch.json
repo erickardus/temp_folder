@@ -1,9 +1,7 @@
 {
   "variables": {
     "gosu_version": "1.10",
-    "elasticsearch_version": "6.2.1",
-    "kibana_version": "6.2.4",
-    "logstash_version": "1:6.2.4-1"
+    "elasticsearch_version": "6.2.1"
   },
   "builders":[
     {
@@ -86,8 +84,8 @@
     {
       "type": "shell",
       "inline": [
-        "apt-get install -y kibana={{user `kibana_version`}} logstash={{user `logstash_version`}}",
-        "/usr/share/elasticsearch/bin/elasticsearch-plugin install x-pack --batch"
+        "/usr/share/elasticsearch/bin/elasticsearch-plugin install x-pack --batch",
+        "echo elasticsearch | /usr/share/elasticsearch/bin/elasticsearch-keystore add --stdin bootstrap.password"
       ]
     }
   ]
